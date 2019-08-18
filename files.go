@@ -33,8 +33,9 @@ type FileInfoResponse struct {
 	URL      string `json:"url"`
 }
 
+//nolint:dupl
 // GetFileInfo provides the file information function.
-func (b *Bot) GetFileInfo(ctx context.Context, r FileID) (*FileInfoResponse, error) {
+func (b *Bot) GetFileInfo(ctx context.Context, r FileID) (*FileInfoResponse, error) { //nolint:dupl
 	if err := r.validate(); err != nil {
 		return nil, err
 	}
